@@ -26,17 +26,6 @@ const main = () => {
     vertices.push(x, y);
   }
 
-  // Alternative usage, evaluating the equation at 10 different angles
-  const centerX = 0; // Adjust center coordinates as needed
-  const centerY = 0;
-
-  for (let i = 0; i < points; i++) {
-    const angle = i * (Math.PI * 2 / points);
-    const x = centerX + radius * Math.cos(angle);
-    const y = centerY + radius * Math.sin(angle);
-    vertices.push(x, y);
-  }
-
   // GPU's like to get one chunk of memory data not scattered pointers like what arrays in js do? if that makes sense?
   const VerticesCPUBuffer = new Float32Array(vertices);
 
