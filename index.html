@@ -4,14 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>webgl</title>
-</head>
-<style>
-  #glcanvas {
-    background-color: salmon;
-  }
-</style>
+  </head>
 <body>
   <canvas id="glcanvas" width="640" height="640" ></canvas>
+  <div>
+    <div>red</div>
+    <input type="range" min="0" max="100" id="red" onchange="location.reload()">
+  </div>
+  <div>
+    <div>green</div>
+    <input type="range" min="0" max="100" id="green" onchange="location.reload()">
+  </div>
+  <div>
+    <div>blue</div>
+    <input type="range" min="0" max="100" id="blue" onchange="location.reload()">
+  </div>
+  <div>
+    <div>alpha</div>
+    <input type="range" min="0" max="100" id="alpha" onchange="location.reload()">
+  </div>
+  <div>
+    <div>points</div>
+    <input type="range" min="3" max="10" id="points" onchange="location.reload()">
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
