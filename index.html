@@ -4,29 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>webgl</title>
-  </head>
+</head>
+<style>
+  html {
+    margin: auto;
+    padding: auto;
+    background-color: #161b22;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .settings{
+    display: flex;
+    gap: 20px;
+    margin: 40px;
+    justify-content: center;
+    align-items: center;
+  }
+  .canvas_container{
+    display: flex;
+    justify-content: center;
+  }
+</style>
 <body>
-  <canvas id="glcanvas" width="640" height="640" ></canvas>
-  <div>
-    <div>red</div>
-    <input type="range" min="0" max="100" id="red" onchange="location.reload()">
+  <div class="canvas_container">
+    <canvas id="glcanvas" height="750px" width="750px"></canvas>
   </div>
-  <div>
-    <div>green</div>
-    <input type="range" min="0" max="100" id="green" onchange="location.reload()">
+
+  <div class="settings">
+    <div>
+      <div>Red</div>
+      <input type="range" min="0" max="100" id="red" onchange="location.reload()">
+    </div>
+
+    <div>
+      <div>Green</div>
+      <input type="range" min="0" max="100" id="green" onchange="location.reload()">
+    </div>
+
+    <div>
+      <div>Blue</div>
+      <input type="range" min="0" max="100" id="blue" onchange="location.reload()">
+    </div>
+
+    <div>
+      <div>Alpha</div>
+      <input type="range" min="0" max="100" id="alpha" onchange="location.reload()">
+    </div>
+
+    <div>
+      <div>Points</div>
+      <input type="range" min="3" max="10" id="points" onchange="location.reload()">
+    </div>
+
+    <div>
+      <div>Mode</div>
+      <select id="mode" onchange="location.reload()">
+        <option value="Points">Points</option>
+        <option value="Lines">Lines</option>
+        <option value="Line_strip">Line Strip</option>
+        <option value="Line_loop">Line Loop</option>
+        <option value="Triangle">Triangles</option>
+        <option value="Triangle_strip">Triangle Strip</option>
+        <option value="Triangle_fan">Triangle Fan</option>
+      </select>
+    </div>
   </div>
-  <div>
-    <div>blue</div>
-    <input type="range" min="0" max="100" id="blue" onchange="location.reload()">
-  </div>
-  <div>
-    <div>alpha</div>
-    <input type="range" min="0" max="100" id="alpha" onchange="location.reload()">
-  </div>
-  <div>
-    <div>points</div>
-    <input type="range" min="3" max="10" id="points" onchange="location.reload()">
-  </div>
+
   <script src="script.js"></script>
 </body>
 </html>

@@ -13,7 +13,7 @@ const main = () => {
   };
 
   const vertices = [];
-  const radius = 1.0; // Adjust radius as needed
+  const radius = 0.5; // Adjust radius as needed
   const points = document.querySelector("#points").value
   const segments = points; // Adjust segments for smoother approximation
 
@@ -137,8 +137,34 @@ const main = () => {
     2* Float32Array.BYTES_PER_ELEMENT,
     0
   )
-
-    gl.drawArrays(gl.TRIANGLE_FAN, 0, points)
+  let gl_mode = gl.TRIANGLES;
+  const mode = document.querySelector('#mode').value
+  switch(mode){
+    case "Points":
+      gl_mode = gl.POINTS
+      break;
+    case "Lines":
+      gl_mode = gl.LINES
+      break;
+    case "Line_strip":
+      gl_mode = gl.LINE_STRIP
+      break;
+    case "Line_loop":
+      gl_mode = gl.LINE_LOOP
+      break;
+    case "Triangle":
+      gl_mode = gl.TRIANGLES
+      break;
+    case "Triangle_strip":
+      gl_mode = gl.TRIANGLE_STRIP
+      break;
+    case "Triangle_fan":
+      gl_mode = gl.TRIANGLE_FAN
+      break;
+    default:
+      return;
+  }
+    gl.drawArrays(gl_mode, 0, points)
 
 }
 
